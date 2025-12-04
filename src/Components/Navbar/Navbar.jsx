@@ -33,7 +33,7 @@ const navItems = [
     ],
   },
   { title: "Membership Plans", href: "#" },
-  { title: "Patient Resources / Forms", href: "#" },
+  { title: "Patient Resources / Forms", href: "/patient-resources-form" },
   { title: "Insurance & Payments", href: "#" },
 ];
 
@@ -56,6 +56,7 @@ const Navbar = () => {
                 className=" w-30 lg:w-44 h-auto"
                 alt="logo"
                 priority
+    
               />
             </Link>
           </div>
