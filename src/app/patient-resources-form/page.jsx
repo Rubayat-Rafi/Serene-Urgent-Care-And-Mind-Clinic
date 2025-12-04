@@ -61,17 +61,17 @@ const ResourcesForm = () => {
   const hasAnswer9 = formData.answers[8] !== null && formData.answers[8] > 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 py-12 px-4">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 to-slate-100 py-12 px-4">
       <div className="max-w-4xl mx-auto">
         
         {/* Header */}
         <div className="bg-white rounded-t-2xl p-8 border-b border-slate-200">
           <div className="flex items-center space-x-3 mb-4">
-            <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center">
-              <FileText className="w-6 h-6 text-teal-600" />
+            <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center">
+              <FileText className="w-6 h-6 text-primary" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-slate-900">Patient Health Questionnaire-9 (PHQ-9)</h1>
+              <h1 className="text-2xl font-bold ">Patient Health Questionnaire-9 (PHQ-9)</h1>
               <p className="text-sm text-slate-600">Depression Screening Assessment</p>
             </div>
           </div>
@@ -96,7 +96,7 @@ const ResourcesForm = () => {
                 type="text"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition"
+                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-accent focus:ring-2 focus:ring-accent outline-none transition"
                 placeholder="Enter patient name"
               />
             </div>
@@ -108,7 +108,7 @@ const ResourcesForm = () => {
                 type="date"
                 value={formData.date}
                 onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition"
+                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-accent focus:ring-2 focus:ring-accent outline-none transition"
               />
             </div>
           </div>
@@ -116,9 +116,9 @@ const ResourcesForm = () => {
           {/* Questions */}
           <div className="space-y-6">
             {questions.map((question, index) => (
-              <div key={index} className="border border-slate-200 rounded-xl p-6 hover:border-teal-300 transition-colors">
+              <div key={index} className="border border-slate-200 rounded-xl p-6 hover:border-accent transition-colors">
                 <div className="flex items-start space-x-3 mb-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center text-teal-700 font-bold text-sm">
+                  <span className="shrink-0 w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">
                     {index + 1}
                   </span>
                   <p className="text-slate-900 font-medium pt-1">{question}</p>
@@ -130,8 +130,8 @@ const ResourcesForm = () => {
                       key={option.value}
                       className={`relative flex items-center justify-center p-3 rounded-lg border-2 cursor-pointer transition-all ${
                         formData.answers[index] === option.value
-                          ? 'border-teal-500 bg-teal-50'
-                          : 'border-slate-200 hover:border-teal-300'
+                          ? 'border-accent bg-accent/20'
+                          : 'border-slate-200 hover:border-accent'
                       }`}
                     >
                       <input
@@ -147,7 +147,7 @@ const ResourcesForm = () => {
                         <div className="text-xs text-slate-500 mt-1">({option.value})</div>
                       </div>
                       {formData.answers[index] === option.value && (
-                        <CheckCircle className="absolute top-2 right-2 w-5 h-5 text-teal-600" />
+                        <CheckCircle className="absolute top-2 right-2 w-5 h-5 text-primary" />
                       )}
                     </label>
                   ))}
@@ -156,7 +156,7 @@ const ResourcesForm = () => {
                 {/* Warning for Question 9 */}
                 {index === 8 && hasAnswer9 && (
                   <div className="mt-4 ml-11 bg-red-50 border border-red-200 rounded-lg p-4 flex items-start space-x-3">
-                    <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                    <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
                     <p className="text-sm text-red-900">
                       <strong>Important:</strong> This response indicates thoughts of self-harm. Please ensure immediate clinical follow-up and assessment.
                     </p>
@@ -167,10 +167,10 @@ const ResourcesForm = () => {
           </div>
 
           {/* Score Display */}
-          <div className={`${interpretation.bg} border-2 border-${interpretation.color.replace('text-', '')} rounded-xl p-6`}>
+          <div className={`${interpretation.bg} border-2 border-accent border-${interpretation.color.replace('text-', '')} rounded-xl p-6`}>
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-xl font-bold text-slate-900">Total Score</h3>
-              <div className="text-4xl font-bold text-teal-600">{totalScore}</div>
+              <h3 className="text-xl font-bold ">Total Score</h3>
+              <div className="text-4xl font-bold text-primary">{totalScore}</div>
             </div>
             <div className={`inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white`}>
               <span className="text-sm font-semibold text-slate-700">Interpretation:</span>
@@ -183,7 +183,7 @@ const ResourcesForm = () => {
 
           {/* Follow-up Question */}
           <div className="border border-slate-200 rounded-xl p-6">
-            <h3 className="font-bold text-slate-900 mb-4">
+            <h3 className="font-bold mb-4">
               10. If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?
             </h3>
             <div className="grid md:grid-cols-2 gap-3">
@@ -192,8 +192,8 @@ const ResourcesForm = () => {
                   key={index}
                   className={`relative flex items-center p-4 rounded-lg border-2 cursor-pointer transition-all ${
                     formData.difficulty === option
-                      ? 'border-teal-500 bg-teal-50'
-                      : 'border-slate-200 hover:border-teal-300'
+                      ? 'border-accent bg-accent/20'
+                      : 'border-slate-200 hover:border-accent'
                   }`}
                 >
                   <input
@@ -222,7 +222,7 @@ const ResourcesForm = () => {
               value={formData.comments}
               onChange={(e) => setFormData({ ...formData, comments: e.target.value })}
               rows="4"
-              className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition resize-none"
+              className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-accent focus:ring-2 focus:ring-accent outline-none transition resize-none"
               placeholder="Additional comments or concerns..."
             ></textarea>
           </div>
@@ -236,7 +236,7 @@ const ResourcesForm = () => {
               value={formData.clinicianNotes}
               onChange={(e) => setFormData({ ...formData, clinicianNotes: e.target.value })}
               rows="4"
-              className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition resize-none"
+              className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-accent focus:ring-2 focus:ring-accent outline-none transition resize-none"
               placeholder="Clinical observations and recommendations..."
             ></textarea>
           </div>
@@ -247,7 +247,7 @@ const ResourcesForm = () => {
           <button className="px-6 py-3 bg-white text-slate-700 font-semibold rounded-lg border-2 border-slate-300 hover:bg-slate-50 transition">
             Clear Form
           </button>
-          <button className="px-6 py-3 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition shadow-lg">
+          <button className="px-6 py-3 bg-primary text-background font-semibold rounded-lg hover:bg-primary-hover transition shadow-lg cursor-pointer">
             Save & Submit
           </button>
         </div>

@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar/Navbar";
 import Footer from "@/Components/Footer/Footer";
+import ScrollToTopButton from "@/Components/ScrollToTopButton/ScrollToTopButton";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -21,6 +22,8 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="lg:min-h-[calc(100vh-491.7px)]">{children}</main>
         <Footer />
+
+        <ScrollToTopButton />
       </body>
     </html>
   );
