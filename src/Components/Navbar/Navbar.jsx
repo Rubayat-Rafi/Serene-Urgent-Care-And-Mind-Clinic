@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarCheck, ChevronDown } from "lucide-react";
+import { CalendarCheck, ChevronDown, CircleChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -26,10 +26,16 @@ const navItems = [
   {
     title: "Services",
     children: [
-      { title: "Urgent Care", href: "#" },
-      { title: "Primary Care", href: "#" },
+      { title: "Urgent Care", href: "/services/urgent-care" },
+      { title: "Primary Care", href: "/services/primary-care" },
       { title: "Mental Health", href: "#" },
       { title: "TMS Therapy", href: "#" },
+      { title: "Insurance Acceptrd", href: "#" },
+      { title: "Affordable Membership Plans", href: "#" },
+      { title: "FLU/COVID Testing", href: "#" },
+      { title: "Physical Exams", href: "#" },
+      { title: "ADHD & Depression Treatment", href: "#" },
+      { title: "Hormone Therapy", href: "#" },
     ],
   },
   { title: "Membership Plans", href: "#" },
@@ -56,7 +62,6 @@ const Navbar = () => {
                 className=" w-30 lg:w-44 h-auto"
                 alt="logo"
                 priority
-    
               />
             </Link>
           </div>
@@ -84,13 +89,14 @@ const Navbar = () => {
                     <div className="absolute left-0 top-full h-3 w-full bg-transparent"></div>
 
                     {/* Dropdown menu */}
-                    <div className="absolute left-0 top-full mt-3 hidden group-hover:block bg-primary shadow-lg p-3 rounded-md min-w-[200px] z-50">
+                    <div className="absolute left-0 top-full mt-3 hidden group-hover:block bg-background shadow-lg p-3 rounded-md min-w-[320px] z-50 ">
                       {item.children.map((child) => (
                         <Link
                           key={child.title}
                           href={child.href}
-                          className="block px-3 py-1 text-background hover:text-white hover:underline"
+                          className="px-3 py-2 text-text hover:text-primary hover:underline flex items-center w-full gap-2"
                         >
+                          <CircleChevronRight size={16}  />
                           {child.title}
                         </Link>
                       ))}
