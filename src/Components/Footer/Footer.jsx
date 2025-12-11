@@ -168,13 +168,13 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-primary-hover mt-0.5 shrink-0" />
+                <MapPin className="w-5 h-5 text-background mt-0.5 shrink-0" />
                 <span className="text-sm">
                   4508 W Imperial HighwayInglewood, CA 90304
                 </span>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-primary-hover shrink-0" />
+                <Phone className="w-5 h-5 text-background shrink-0" />
                 <Link
                   href="tel:+1234567890"
                   className="text-sm hover:text-primary-hover transition"
@@ -183,7 +183,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-primary-hover shrink-0" />
+                <Mail className="w-5 h-5 text-background shrink-0" />
                 <Link
                   href="mailto:info@serenecare.com"
                   className="text-sm hover:text-primary-hover transition"
@@ -192,7 +192,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="flex items-start space-x-3">
-                <Clock className="w-5 h-5 text-primary-hover mt-0.5 shrink-0" />
+                <Clock className="w-5 h-5 text-background mt-0.5 shrink-0" />
                 <div className="text-sm">
                   <p>Mon-Fri: 8AM - 8PM</p>
                   <p>Sat-Sun: 9AM - 5PM</p>

@@ -38,7 +38,7 @@ const navItems = [
       { title: "Hormone Therapy", href: "#" },
     ],
   },
-  { title: "Membership Plans", href: "#" },
+  { title: "Membership Plans", href: "/membership-plans" },
   { title: "Patient Resources / Forms", href: "/patient-resources-form" },
   { title: "Insurance & Payments", href: "#" },
 ];
@@ -124,7 +124,7 @@ const Navbar = () => {
             })}
 
             <Link
-              href={"/schedule"}
+              href={"/"}
               className="group relative py-1.5 px-3.5 lg:px-6 lg:py-2 bg-primary rounded-full font-medium text-background overflow-hidden hover:scale-105 hover:shadow-2xs hover:shadow-primary cursor-pointer transition-transform duration-500 ease-in-out"
             >
               <span className="relative z-10 flex items-center justify-center gap-2 text-sm lg:text-base">
@@ -245,7 +245,7 @@ const Navbar = () => {
           </div>
 
           {/* end  */}
-          <Link href={"/schedule"}>
+          <Link href={"/"}>
             <button
               type="button"
               onClick={() => setIsOpen(false)}
