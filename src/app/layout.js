@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/Components/Navbar/Navbar";
 import Footer from "@/Components/Footer/Footer";
 import ScrollToTopButton from "@/Components/ScrollToTopButton/ScrollToTopButton";
+import Providers from "./providers";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,11 +20,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
-        <Navbar />
-        <main className="lg:min-h-[calc(100vh-491.7px)]">{children}</main>
-        <Footer />
-
-        <ScrollToTopButton />
+        <Providers>
+          <Navbar />
+          <main className="lg:min-h-[calc(100vh-491.7px)]">{children}</main>
+          <Footer />
+          <ScrollToTopButton />
+        </Providers>
       </body>
     </html>
   );
